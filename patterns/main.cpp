@@ -171,6 +171,37 @@ void num_triangle(int n){
 	      cout<<endl;
 	}
 }
+void alpha_triangle(int n){
+	for(int row=0;row<=n;row++){    
+		char alpha=65;
+		for(int col=0;col<row;col++){
+		cout<<char(alpha);
+	      	alpha++;
+	      }
+	      cout<<endl;
+	}
+}
+
+void rev_alpha(int n){
+	for(int row=n;row>0;row--){    
+		char alpha=65;
+		for(int col=0;col<row;col++){
+		cout<<char(alpha);
+	      	alpha++;
+	      }
+	      cout<<endl;
+	}
+}
+void rev_alpha_same(int n){
+	char alpha=65;
+	for(int row=1;row<=n;row++){    
+		for(int col=0;col<row;col++){
+		cout<<char(alpha)<<" ";
+	      }
+	      alpha++;
+	      cout<<endl;
+	}
+}
 int main(){
 	square(5,'*');
 	triangle(5,'*');
@@ -188,7 +219,9 @@ int main(){
 	singleCrown(9);
 	crown(10);
 	num_triangle(3);
-
-	
+	alpha_triangle(5);
+	rev_alpha(5);
+	cout<<endl;
+	rev_alpha_same(5);
 }
 
