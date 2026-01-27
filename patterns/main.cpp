@@ -161,6 +161,16 @@ void singleCrown(int n){
 		cout<<endl;
 	}
 }
+void num_triangle(int n){
+	int num=1;
+	for(int row=1;row<=n;row++){    
+	for(int col=0;col<row;col++){
+		cout<<num<<" ";
+	      	      	num++;
+	      }
+	      cout<<endl;
+	}
+}
 int main(){
 	square(5,'*');
 	triangle(5,'*');
@@ -176,7 +186,9 @@ int main(){
 	binarytriangle(5);
 	drybinarytriangle(5);
 	singleCrown(9);
-	//crown(10);
+	crown(10);
+	num_triangle(3);
+
 	
 }
 
