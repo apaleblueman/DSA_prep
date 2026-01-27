@@ -124,6 +124,43 @@ void drybinarytriangle(int n){
         cout << endl;
     }
 }
+void crown(int n){
+	int N=2;
+	for(int row=1;row<=n;row++){
+		//cout<<(2*row)-2;
+		for(int col=1;col<=row;col++){
+			cout<<col;
+		}
+		for(int space=0;space<((2*n)-N);space++){
+				if(space>9){
+					cout<<"  ";
+				}
+				else cout<<" ";
+		}
+		N=N+2;
+		for(int rcol=row;rcol>0;rcol--){
+			cout<<rcol;
+		}
+		cout<<endl;
+	}
+}
+
+void singleCrown(int n){
+	int N=2;
+	for(int row=1;row<=n;row++){
+		//cout<<(2*row)-2;
+		for(int col=1;col<=row;col++){
+			cout<<col;
+		}
+		for(int space=0;space<((2*(n-row)));space++){
+				 cout<<" ";
+		}
+		for(int rcol=row;rcol>0;rcol--){
+			cout<<rcol;
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	square(5,'*');
 	triangle(5,'*');
@@ -138,5 +175,8 @@ int main(){
 	verticalPyramid(5, '*');
 	binarytriangle(5);
 	drybinarytriangle(5);
+	singleCrown(9);
+	//crown(10);
+	
 }
 
