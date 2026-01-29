@@ -202,6 +202,38 @@ void rev_alpha_same(int n){
 	      cout<<endl;
 	}
 }
+/*void alpha_pyramid(int n){
+	char alpha=65;
+	for(int row=1;row<=(2*n)-1;row++){
+		for(int col=0;col<(n-row);col++){
+			cout<<" ";
+		}
+		for(int col=0;col<row;col++){
+			cout<<char(alpha);	
+			alpha++;
+		}
+		cout<<endl;
+	}
+}*/
+void alpha_pyramid(int n){
+    for(int row=1;row<=n;row++){
+        char alpha=65;
+        for(int col=0;col<=(n-row);col++){
+            cout<<" ";
+        }
+        for(int col=0;col<row;col++){
+            cout<<char(alpha);
+            alpha++;
+        }
+        alpha=alpha-1;
+        for(int col=row;col>1;col--){
+            alpha--;
+            cout<<alpha;
+        }
+        cout<<endl;
+    }
+}
+
 int main(){
 	square(5,'*');
 	triangle(5,'*');
@@ -223,5 +255,7 @@ int main(){
 	rev_alpha(5);
 	cout<<endl;
 	rev_alpha_same(5);
+	alpha_pyramid(5);
+	
 }
 
