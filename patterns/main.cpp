@@ -233,7 +233,15 @@ void alpha_pyramid(int n){
         cout<<endl;
     }
 }
-
+void number18(int n){
+	int end=65+(n-1);
+	for(int row=1;row<=n;row++){
+		for(int col=end;col<=end;col=col-row){
+			cout<<col<<" ";
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	square(5,'*');
 	triangle(5,'*');
@@ -256,6 +264,8 @@ int main(){
 	cout<<endl;
 	rev_alpha_same(5);
 	alpha_pyramid(5);
+	cout<<"******************"<<endl;
+	number18(5);
 	
 }
 
