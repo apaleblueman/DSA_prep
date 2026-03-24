@@ -234,11 +234,14 @@ void alpha_pyramid(int n){
     }
 }
 void number18(int n){
-	int end=65+(n-1);
-	for(int row=1;row<=n;row++){
-		for(int col=end;col<=end;col=col-row){
-			cout<<col<<" ";
+	int starting_letter=65+(n-1);
+	for(int i=0;i<n;i++){
+		int next = starting_letter;
+		for(int col=0;col<=i;col++){
+			cout<<char(next);
+			next++;
 		}
+		starting_letter--;
 		cout<<endl;
 	}
 }
@@ -264,7 +267,6 @@ int main(){
 	cout<<endl;
 	rev_alpha_same(5);
 	alpha_pyramid(5);
-	cout<<"******************"<<endl;
 	number18(5);
 	
 }
