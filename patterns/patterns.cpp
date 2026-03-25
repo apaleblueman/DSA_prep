@@ -245,6 +245,29 @@ void number18(int n){
 		cout<<endl;
 	}
 }
+void number19(int n){
+	for(int row=0;row<n;row++){
+		for(int col=n;col>row;col--){
+			cout<<"*";
+		}
+		for(int ws=0;ws<row*2;ws++){
+			cout<<"_";
+		}
+		for(int col=n;col>row;col--){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	for(int row=1;row<n;row++){
+		for(int col=0;col<=row;col++){
+			cout<<"*";
+		}
+		for(int col=n;col>=row;col--){
+			cout<<"$";
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	square(5,'*');
 	triangle(5,'*');
@@ -268,6 +291,6 @@ int main(){
 	rev_alpha_same(5);
 	alpha_pyramid(5);
 	number18(5);
-	
+	number19(5);
 }
 
