@@ -183,91 +183,124 @@ void alpha_triangle(int n){
 }
 
 void rev_alpha(int n){
-	for(int row=n;row>0;row--){    
-		char alpha=65;
-		for(int col=0;col<row;col++){
-		cout<<char(alpha);
-	      	alpha++;
-	      }
-	      cout<<endl;
-	}
+for(int row=n;row>0;row--){    
+	char alpha=65;
+	for(int col=0;col<row;col++){
+	cout<<char(alpha);
+	alpha++;
+      }
+      cout<<endl;
+}
 }
 void rev_alpha_same(int n){
-	char alpha=65;
-	for(int row=1;row<=n;row++){    
-		for(int col=0;col<row;col++){
-		cout<<char(alpha)<<" ";
-	      }
-	      alpha++;
-	      cout<<endl;
-	}
+char alpha=65;
+for(int row=1;row<=n;row++){    
+	for(int col=0;col<row;col++){
+	cout<<char(alpha)<<" ";
+      }
+      alpha++;
+      cout<<endl;
+}
 }
 /*void alpha_pyramid(int n){
-	char alpha=65;
-	for(int row=1;row<=(2*n)-1;row++){
-		for(int col=0;col<(n-row);col++){
-			cout<<" ";
-		}
-		for(int col=0;col<row;col++){
-			cout<<char(alpha);	
-			alpha++;
-		}
-		cout<<endl;
+char alpha=65;
+for(int row=1;row<=(2*n)-1;row++){
+	for(int col=0;col<(n-row);col++){
+		cout<<" ";
 	}
+	for(int col=0;col<row;col++){
+		cout<<char(alpha);	
+		alpha++;
+	}
+	cout<<endl;
+}
 }*/
 void alpha_pyramid(int n){
-    for(int row=1;row<=n;row++){
-        char alpha=65;
-        for(int col=0;col<=(n-row);col++){
-            cout<<" ";
-        }
-        for(int col=0;col<row;col++){
-            cout<<char(alpha);
-            alpha++;
-        }
-        alpha=alpha-1;
-        for(int col=row;col>1;col--){
-            alpha--;
-            cout<<alpha;
-        }
-        cout<<endl;
-    }
+for(int row=1;row<=n;row++){
+char alpha=65;
+for(int col=0;col<=(n-row);col++){
+    cout<<" ";
+}
+for(int col=0;col<row;col++){
+    cout<<char(alpha);
+    alpha++;
+}
+alpha=alpha-1;
+for(int col=row;col>1;col--){
+    alpha--;
+    cout<<alpha;
+}
+cout<<endl;
+}
 }
 void number18(int n){
-	int starting_letter=65+(n-1);
-	for(int i=0;i<n;i++){
-		int next = starting_letter;
-		for(int col=0;col<=i;col++){
-			cout<<char(next);
-			next++;
-		}
-		starting_letter--;
-		cout<<endl;
+int starting_letter=65+(n-1);
+for(int i=0;i<n;i++){
+	int next = starting_letter;
+	for(int col=0;col<=i;col++){
+		cout<<char(next);
+		next++;
 	}
+	starting_letter--;
+	cout<<endl;
+}
 }
 void number19(int n){
-	for(int row=0;row<n;row++){
-		for(int col=n;col>row;col--){
-			cout<<"*";
-		}
-		for(int ws=0;ws<row*2;ws++){
-			cout<<"_";
-		}
-		for(int col=n;col>row;col--){
-			cout<<"*";
-		}
-		cout<<endl;
+for(int row=0;row<n;row++){
+	for(int col=n;col>row;col--){
+		cout<<"*";
 	}
-	for(int row=1;row<n;row++){
-		for(int col=0;col<=row;col++){
-			cout<<"*";
-		}
-		for(int col=n;col>=row;col--){
-			cout<<"$";
-		}
-		cout<<endl;
+	for(int ws=0;ws<row*2;ws++){
+		cout<<" ";
 	}
+	for(int col=n;col>row;col--){
+		cout<<"*";
+	}
+	cout<<endl;
 }
+for(int row=0;row<n;row++){
+	for(int col=0;col<=row;col++){
+		cout<<"*";
+	}
+	for(int ws=0;ws<((2*n)-((row+1)*2));ws++){
+		cout<<" ";
+	}
+	for(int col=0;col<=row;col++){
+		cout<<"*";
+	}
+	cout<<endl;
+}
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++*/
+void number20(int n){
+for(int row=0;row<n;row++){
+	for(int col=0;col<=row;col++){
+		cout<<"*";
+	}
+	for(int ws=0;ws<((2*n)-((row+1)*2));ws++){
+		cout<<" ";
+	}
+	for(int col=0;col<=row;col++){
+		cout<<"*";
+	}
+	cout<<endl;
+}
+
+for(int row=0;row<n;row++){
+	for(int col=n;col>row;col--){
+		cout<<"*";
+	}
+	for(int ws=0;ws<row*2;ws++){
+		cout<<" ";
+	}
+	for(int col=n;col>row;col--){
+		cout<<"*";
+	}
+	cout<<endl;
+}
+}
+/*-------------------------------------------*/
 int main(){
 	square(5,'*');
 	triangle(5,'*');
@@ -292,5 +325,6 @@ int main(){
 	alpha_pyramid(5);
 	number18(5);
 	number19(5);
+	number20(5);
 }
 
