@@ -325,26 +325,27 @@ void number21(int n){
 }
 /*--------------------------------------------*/
 void number22(int n){
+	int M = (2*n)-1;
 	int N = (2*n)-1;
 	int toprint = n;
-	for(int row=0;row<N;row++){
-		if(row==0 || row==(n-1)){
+	for(int row=0;row<M;row++){
+		if(row==0 || row==(N-1)){
 			for(int col=0;col<N;col++){
 				cout<<n;
 			}
 		}
 		else{
 			for(int col=0;col<N;col++){
-				if(col==0 || col == (n-1)){
+				if(col==0 || col == (N-1)){
 					toprint = n;
 				}
 				else{
 					toprint = col;
-	
 				}
 				cout<<toprint;
 			}
 		}
+		//M--;
 		cout<<endl;
 	}
 }
