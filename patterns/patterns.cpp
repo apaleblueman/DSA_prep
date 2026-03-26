@@ -301,6 +301,54 @@ for(int row=0;row<n;row++){
 }
 }
 /*-------------------------------------------*/
+void number21(int n){
+	char toprint=' ';
+	for(int row=0;row<n;row++){
+		if(row==0 || row==(n-1)){
+			for(int col=0;col<n;col++){
+				cout<<"*";
+			}
+		}
+		else{
+			for(int col=0;col<n;col++){
+				if(col==0 || col == (n-1)){
+				 	toprint ='*'; 
+				}
+				else{
+					toprint=' ';
+				}
+				cout<<toprint;
+			}
+		}
+		cout<<endl;
+	}
+}
+/*--------------------------------------------*/
+void number22(int n){
+	int N = (2*n)-1;
+	int toprint = n;
+	for(int row=0;row<N;row++){
+		if(row==0 || row==(n-1)){
+			for(int col=0;col<N;col++){
+				cout<<n;
+			}
+		}
+		else{
+			for(int col=0;col<N;col++){
+				if(col==0 || col == (n-1)){
+					toprint = n;
+				}
+				else{
+					toprint = col;
+	
+				}
+				cout<<toprint;
+			}
+		}
+		cout<<endl;
+	}
+}
+
 int main(){
 	square(5,'*');
 	triangle(5,'*');
@@ -324,7 +372,9 @@ int main(){
 	rev_alpha_same(5);
 	alpha_pyramid(5);
 	number18(5);
-	number19(5);
+	number19(15);
 	number20(5);
+	number21(15);
+	number22(4);
 }
 
