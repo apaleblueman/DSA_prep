@@ -1,15 +1,13 @@
 #include<iostream>
 #include<bits/stdc++.h>
-#include<cmath>
 using namespace std;
 int reverse(int num) {
-        int count=log10(num)+1, revnum=0;
-        while((num%10)!=0){
-            revnum+= ((num%10)* pow(10,count-1));
-	    num = num /10;
-            count--;
-
-        }
+        int revnum=0;
+        while(num!=0){
+		cout<<num<<"-"<<revnum<<endl;
+		revnum = (num % 10) + revnum*10;
+		num = num / 10;
+	}
         return revnum;
     }
 int main(){
@@ -18,4 +16,3 @@ int main(){
 	cin>>num;
 	cout<<reverse(num)<<endl;
 }
-
