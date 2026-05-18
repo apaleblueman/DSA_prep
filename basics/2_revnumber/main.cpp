@@ -2,9 +2,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 int reverse(int num) {
-        int revnum=0;
+        long revnum=0;
         while(num!=0){
-		cout<<num<<"-"<<revnum<<endl;
+		//cout<<num<<"-"<<revnum<<endl;
 		revnum = (num % 10) + revnum*10;
 		num = num / 10;
 	}

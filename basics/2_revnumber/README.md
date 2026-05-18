@@ -19,3 +19,11 @@ do this in a while loop and use count formula from [previous]("https://github.co
 So another better approach would be to not rely on condition that ognum reduces to 0 , and not to rely on a counter that decrements, because if we use modulo condition here than the loop stops at first 0 it encounters and if rely on the formula i came up with we would need seprate while loop logic to truncate trailing 0s. So instead i cheated(after struglling for some time) and looked a bit at the answer.
 So better formula to use that eliminates need for counter and modulo conditional check. 
 we use `revnum = (num % 10) + revnum*10` which implicitly handles trailing zeroes as addition of zero to a number doesnt have any effect!, it handles signed numbers as well because in our `while(num!=0)` this condition doesnt bound as >  or < and only stops at zero. So number can either come down/ reduce to zero as case in positive numbers or grow towards zero as case in negative nums.
+
+### So did i solve it?
+**NOPE**
+while this code would pass the leetcode test cases for problem #7 but once i submitted it i was struck with this error:
+`Line 7: Char 43: runtime error: signed integer overflow: 964632435 * 10 cannot be represented in type 'int' (solution.cpp)
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior prog_joined.cpp:16:43`
+
+### TBC...
