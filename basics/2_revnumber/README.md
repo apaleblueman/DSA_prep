@@ -52,12 +52,12 @@ So for these the conditions become:
 
 ### for overflow:
 
-> `if((revnum > INT_MAX/10)||((revnum == INT_MAXX)&& revnum > 7))`
+> `if((revnum > INT_MAX/10)||((revnum == INT_MAXX)&& x%10 > 7))`
 
 
 ### for underflow:
 
-> `if((revnum < INT_MIN/10)||((revnum == INT_MIN)&& revnum < -8)`
+> `if((revnum < INT_MIN/10)||((revnum == INT_MIN)&& x%10 < -8)`
 
 This is due to symmetry and boundaries of constraints!
 
