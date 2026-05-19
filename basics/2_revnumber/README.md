@@ -61,3 +61,5 @@ So for these the conditions become:
 
 This is due to symmetry and boundaries of constraints!
 
+## Bonus: 
+now we can also use this same reverse logic to check if a given integer is a palindrome or not? this is leetcode problem #9. here is the solution.
