@@ -43,9 +43,17 @@ so here we rearrange the expression to check revnum itself against some value th
 
 similarly we can check for underflow using 
 
-`revnum < INT_MIN`
+`revnum < INT_MIN/10`
 
 Now this gets submitted and passes leetcode tests, but we can still optimize this. 
 When we check for above two cases , there are also some cases where revnum is equal to the constraint itself ie `revnum == INT_MAXorMIN` , then the decision depends on lastdigit should be in `[7 to -8]` range to be considered overflow/underflow safe!
 
+So for these the conditions become:
+
+for overflow:
+> `if((revnum > INT_MAX/10)||((revnum == INT_MAXX)&& revnum > 7))`
+for underflow:
+> `if((revnum < INT_MIN/10)||((revnum == INT_MIN)&& revnum < -8)`
+
+This is due to symmetry and boundaries of constraints!
 
