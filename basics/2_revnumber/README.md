@@ -26,4 +26,5 @@ while this code would pass the leetcode test cases for problem #7 but once i sub
 `Line 7: Char 43: runtime error: signed integer overflow: 964632435 * 10 cannot be represented in type 'int' (solution.cpp)
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior prog_joined.cpp:16:43`
 
+so this happens because if a large enough input is given , then once its reversed or even if its just multiplied by 10 , then it can grow very quickly such that it exceeds 2^31 size of 32 bit integer constraint causing an overflow, crashing the program.
 ### TBC....
