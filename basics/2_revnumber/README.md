@@ -27,4 +27,20 @@ while this code would pass the leetcode test cases for problem #7 but once i sub
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior prog_joined.cpp:16:43`
 
 so this happens because if a large enough input is given , then once its reversed or even if its just multiplied by 10 , then it can grow very quickly such that it exceeds 2^31 size of 32 bit integer constraint causing an overflow, crashing the program.
+
+In C++ there are macros like `INT_MAX`, `INT_MIN` that correspond to integer type's minimum and maximum value in context of the program they are used in.So we will use these macros to check of over or underflow. In the problem statement in leet we are give constraint as `-231 <= x <= 231 - 1`. So we can simply implement these in an if condition using || operator, but the trick here is that we must detect the overflow before it can actually execute or in this case crash the program.
+
+In our code on line 7 we can add the if condition , however we cannot just check if `revnum > INT_MAX` or `revnum < INT_MIN` because revnum even if it is small, can become exponentially big once inputted into formula.
+so the problem is that once revnum gets evaluated in this formula: `revnum * 10 + digit` it can get too large or too small exponentially. So we really need to check if revnum exceeds our constraints when multiplied by 10, we can ignore digit here as its a small number always(0-9), but here is another problem.
+
+checking this condition `revnum * 10` itself can cause overflow !
+so here we rearrange the expression to check revnum itself against some value that can tell us wether it can overflow or not!
+
+`revnum*10 > INT_NUM`
+`revnum > INT_NUM/10`
+
+> this is our first overflow check!!
+
+
+
 ### TBC....
