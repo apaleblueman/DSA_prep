@@ -36,11 +36,16 @@ so the problem is that once revnum gets evaluated in this formula: `revnum * 10 
 checking this condition `revnum * 10` itself can cause overflow !
 so here we rearrange the expression to check revnum itself against some value that can tell us wether it can overflow or not!
 
-`revnum*10 > INT_NUM`
-`revnum > INT_NUM/10`
+`revnum*10 > INT_MAX`
+`revnum > INT_MAX/10`
 
-> this is our first overflow check!!
+> this is our overflow check!!
+
+similarly we can check for underflow using 
+
+`revnum < INT_MIN`
+
+Now this gets submitted and passes leetcode tests, but we can still optimize this. 
+When we check for above two cases , there are also some cases where revnum is equal to the constraint itself ie `revnum == INT_MAXorMIN` , then the decision depends on lastdigit should be in `[7 to -8]` range to be considered overflow/underflow safe!
 
 
-
-### TBC....
