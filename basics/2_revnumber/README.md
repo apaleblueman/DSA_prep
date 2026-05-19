@@ -50,9 +50,13 @@ When we check for above two cases , there are also some cases where revnum is eq
 
 So for these the conditions become:
 
-for overflow:
+### for overflow:
+
 > `if((revnum > INT_MAX/10)||((revnum == INT_MAXX)&& revnum > 7))`
-for underflow:
+
+
+### for underflow:
+
 > `if((revnum < INT_MIN/10)||((revnum == INT_MIN)&& revnum < -8)`
 
 This is due to symmetry and boundaries of constraints!
