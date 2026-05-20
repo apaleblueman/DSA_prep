@@ -7,7 +7,7 @@ bool chk_ams(int num){
 	int count = log10(num)+1;
 	int ams = 0;
 	int digit;
-	while(num!=0){
+	while(num>0){
 		digit = num % 10;
 		ams += pow(digit,count);
 		num = num/10;
