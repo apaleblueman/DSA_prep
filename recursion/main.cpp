@@ -10,7 +10,6 @@ void print_nums(int N, int i=1){
 		if(i>N){return;}
 		cout<<i<<endl;
 		print_nums(N, ++i);
-		
 }
 void print_nums_rev(int N){
 		if(N==0){return;}
@@ -19,7 +18,7 @@ void print_nums_rev(int N){
 }
 int sum_firstn(int N){
 	if(N<1){return N;}
-	return N + sum_firstn(N-1);//here we cant use --N because it double modifies N, and due  to recursion N is already changing via a sequence 
+	return N + sum_firstn(N-1);//here we cant use --N because it double modifies N, and due  to recursion N is already changing via a sequence
 
 }
 int facto(int n){

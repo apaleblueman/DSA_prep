@@ -1,8 +1,3 @@
-#include <string>
-#include <cctype>
-#include <iostream>
-using namespace std;
-
 bool isPalindrome(string s) {
       string og,rev;
       int start=0, end=s.size()-1;
@@ -10,30 +5,21 @@ bool isPalindrome(string s) {
           if(isalpha(s[start])){
                 og+=tolower(s[start]);
           }
-          else if(isdigit(s[start])){
-                og+=(char)s[start];
+          if(isdigit(s[start])){
+                og+=(char)s[end];
           }
           if(isalpha(s[end])){
             rev+=tolower(s[end]);
           }
-          else if(isdigit(s[end])){
+          if(isdigit(s[end])){
                 rev+=(char)s[end];
           }
           start++;
           end--;
       }
-      cout<<og<<endl<<rev<<endl;
       if(og.compare(rev) != 0){
         return false;
       }
       return true;
-}
 
-int main(){
-	string user_str;
-  cout<<"enter a string: ";
-  cin>>user_str;
-  cout<<endl;
-  if(isPalindrome(user_str)){cout<<"yup";}
-  else{cout<<"nope";}
 }
