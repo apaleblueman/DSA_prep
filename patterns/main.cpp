@@ -24,6 +24,9 @@ void right_triangle(int n){
 		for(int j=1;j<=i;j++){
 			cout<<j<<" ";
 		}
+		for(int j=1;j<=i;j++){
+			cout<<j<<" ";
+		}
 		cout<<endl;
 	}
 }
@@ -57,13 +60,27 @@ void inverted_triangle(int n){
 
 void xmas_tree(int n){
 		for(int row=0;row<n;row++){
-			for(int star=0;star<=row;star++){
-						
+			for(int spc=0;spc<(n-1-row);spc++){
+				cout<<" ";
+			}
+			for(int star=0;star<(2*row)+1;star++){
+				cout<<"*";            
 			}
 			cout<<endl;
 		}
 }
 
+void inverted_xmas_tree(int n){
+		for(int row=n;row>=0;row--){
+			for(int spc=0;spc<=(n-1-row);spc++){
+				cout<<" ";
+			}
+			for(int star=0;star<((2*row)+1);star++){
+				cout<<"*";            
+			}
+			cout<<endl;
+		}
+}
 
 int main(){
 	rectangle_filled('*',5,7);
@@ -72,6 +89,8 @@ int main(){
 	right_triangle_n(7);
 	inverted_triangle('*',7);
 	inverted_triangle(7);
-	xmas_tree(3);
+	xmas_tree(5);
+	cout<<endl;
+	inverted_xmas_tree(5);
 	return 0;
 }
