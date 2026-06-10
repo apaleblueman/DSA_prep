@@ -69,19 +69,18 @@ void xmas_tree(int n){
 			cout<<endl;
 		}
 }
-
 void inverted_xmas_tree(int n){
-		for(int row=n;row>=0;row--){
-			for(int spc=0;spc<=(n-1-row);spc++){
-				cout<<" ";
-			}
-			for(int star=0;star<((2*row)+1);star++){
-				cout<<"*";            
-			}
-			cout<<endl;
+	for(int row=n-1;row>=0;row--){
+		for(int spc=0;spc<((n-row)-1);spc++){
+			cout<<" ";
 		}
+		for(int star=0;star<((2*row)+1);star++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
 }
-
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -90,7 +89,6 @@ int main(){
 	inverted_triangle('*',7);
 	inverted_triangle(7);
 	xmas_tree(5);
-	cout<<endl;
 	inverted_xmas_tree(5);
 	return 0;
 }
