@@ -81,6 +81,18 @@ void inverted_xmas_tree(int n){
 	}
 	cout<<endl;
 }
+void half_diamond(int n){
+	for(int row = 1;row<=((2*n)-1);row++){
+		int row_flag = row;
+		if(row>n){
+			row_flag = n - (row-n);
+		}
+		for(int col=0;col<row_flag;col++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -90,5 +102,7 @@ int main(){
 	inverted_triangle(7);
 	xmas_tree(5);
 	inverted_xmas_tree(5);
+	half_diamond(5);
+	
 	return 0;
 }
