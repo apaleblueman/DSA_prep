@@ -93,6 +93,20 @@ void half_diamond(int n){
 		cout<<endl;
 	}
 }
+
+void binary_triangle(int n){
+	cout<<endl;
+	for(int row=1;row<=n;row++){
+		int head=1;
+		if(row%2==0){head=0;}
+		for(int col=1;col<=row;col++){
+			
+			cout<<head;
+			head = 1 - head;
+		}
+	cout<<endl;
+	}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -103,6 +117,6 @@ int main(){
 	xmas_tree(5);
 	inverted_xmas_tree(5);
 	half_diamond(5);
-	
+	binary_triangle(5);
 	return 0;
 }
