@@ -126,6 +126,17 @@ void crown(int n){
 		cout<<endl;
 	}
 }
+
+void inc_numtriangle(int n){
+		int counter = 1;
+		for(int row=1;row<=n;row++){
+			for(int col=1;col<=row;col++){
+				cout<<counter;
+				counter++;
+			}
+			cout<<endl;
+		}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -139,5 +150,6 @@ int main(){
 	binary_triangle(5);
 	cout<<endl;
 	crown(4);
+	inc_numtriangle(3);
 	return 0;
 }
