@@ -137,6 +137,27 @@ void inc_numtriangle(int n){
 			cout<<endl;
 		}
 }
+
+void alphabet_triangle(int n){
+	for(int row=0;row<n;row++){
+		int A = 65;
+		for(int col=0;col<=row;col++){
+			cout<<(char)A;
+			A++;
+		}
+		cout<<endl;
+	}
+}
+void rev_alphabet_triangle(int n){
+	for(int row=n;row>0;row--){
+		int A = 65;
+		for(int col=row;col>0;col--){
+			cout<<(char)A;
+			A++;
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -151,5 +172,7 @@ int main(){
 	cout<<endl;
 	crown(4);
 	inc_numtriangle(3);
+	alphabet_triangle(5);
+	rev_alphabet_triangle(5);
 	return 0;
 }
