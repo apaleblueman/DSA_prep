@@ -94,6 +94,7 @@ void half_diamond(int n){
 	}
 }
 
+
 void binary_triangle(int n){
 	cout<<endl;
 	for(int row=1;row<=n;row++){
@@ -107,6 +108,24 @@ void binary_triangle(int n){
 	cout<<endl;
 	}
 }
+void crown(int n){
+	int numbers, total_columns, spaces;
+	for(int row=0;row<n;row++){
+		numbers = row+1;
+		total_columns = n*2;
+		for(int n1 = 1; n1<=numbers; n1++){
+			cout<<n1;	
+		}
+		spaces = total_columns - (numbers*2);
+		for(int sp=1; sp<=spaces;sp++){
+			cout<<" ";
+		}
+		for(int n1 = numbers; n1 >=1; n1--){
+			cout<<n1;	
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -118,5 +137,7 @@ int main(){
 	inverted_xmas_tree(5);
 	half_diamond(5);
 	binary_triangle(5);
+	cout<<endl;
+	crown(4);
 	return 0;
 }
