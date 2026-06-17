@@ -158,6 +158,32 @@ void rev_alphabet_triangle(int n){
 		cout<<endl;
 	}
 }
+
+void rowalphabet_triangle(int n){
+	char a = 'A';
+	for(int row=0;row<n;row++){
+		for(int col=0;col<=row;col++){
+			cout<<a;
+		}
+		a++;
+		cout<<endl;
+	}
+	
+}
+
+void alph_pyramid(int n){
+	for(int row=0;row<n;row++){
+		char a = 'A';
+		for(int spaces=0;spaces<((n-1)-row);spaces++){
+			cout<<" ";
+		}
+		for(int col=0;col<((2*row)+1);col++){
+			cout<<a;
+			a++;	
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -174,5 +200,7 @@ int main(){
 	inc_numtriangle(3);
 	alphabet_triangle(5);
 	rev_alphabet_triangle(5);
+	rowalphabet_triangle(5);
+	alph_pyramid(5);
 	return 0;
 }
