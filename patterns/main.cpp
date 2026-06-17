@@ -184,6 +184,16 @@ void alph_pyramid(int n){
 		cout<<endl;
 	}
 }
+
+void reversed_alphas(int n){
+	int start = 65 + n;
+	for(int row=1;row<=n;row++){
+		for(int col=start-row;col<start;col++){
+			cout<<(char)col;
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -202,5 +212,6 @@ int main(){
 	rev_alphabet_triangle(5);
 	rowalphabet_triangle(5);
 	alph_pyramid(5);
+	reversed_alphas(3);
 	return 0;
 }
