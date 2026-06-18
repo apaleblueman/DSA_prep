@@ -194,6 +194,35 @@ void reversed_alphas(int n){
 		cout<<endl;
 	}
 }
+
+void hollow_diamond(int n){
+	int N = 2*n;
+	for(int row=0;row<n;row++){
+		for(int star=0;star<(n -row);star++){
+			cout<<"*";
+		}
+		
+		for(int spc=0;spc<(N-(N - (2*row)));spc++){
+			cout<<" ";
+		}
+		for(int star=(n-row);star>0;star--){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	for(int row=n;row>=0;row--){
+		for(int star=0;star<(n -row);star++){
+			cout<<"*";
+		}
+		for(int spc=0;spc<(N-(N-(2*row)));spc++){
+			cout<<" ";
+		}
+		for(int star=(n-row);star>0;star--){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -212,6 +241,7 @@ int main(){
 	rev_alphabet_triangle(5);
 	rowalphabet_triangle(5);
 	alph_pyramid(5);
-	reversed_alphas(3);
+	reversed_alphas(5);
+	hollow_diamond(5);
 	return 0;
 }
