@@ -201,8 +201,21 @@ void hollow_diamond(int n){
 		for(int star=0;star<(n -row);star++){
 			cout<<"*";
 		}
-		
 		for(int spc=0;spc<(N-(N - (2*row)));spc++){
+			cout<<" ";
+		}
+		for(int star=(n-row);star>0;star--){
+			cout<<"*";
+		}
+		if(row!=n-1)
+		{
+		cout<<endl;}
+	}
+	for(int row=n;row>=0;row--){
+		for(int star=0;star<(n -row);star++){
+			cout<<"*";
+		}
+		for(int spc=0;spc<(N-(N-(2*row)));spc++){
 			cout<<" ";
 		}
 		for(int star=(n-row);star>0;star--){
@@ -210,11 +223,26 @@ void hollow_diamond(int n){
 		}
 		cout<<endl;
 	}
+}
+void hourglass(int n){
+	int N = 2*n;
 	for(int row=n;row>=0;row--){
 		for(int star=0;star<(n -row);star++){
 			cout<<"*";
 		}
 		for(int spc=0;spc<(N-(N-(2*row)));spc++){
+			cout<<" ";
+		}
+		for(int star=(n-row);star>0;star--){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	for(int row=0;row<n;row++){
+		for(int star=0;star<(n -row);star++){
+			cout<<"*";
+		}
+		for(int spc=0;spc<(N-(N - (2*row)));spc++){
 			cout<<" ";
 		}
 		for(int star=(n-row);star>0;star--){
@@ -242,6 +270,7 @@ int main(){
 	rowalphabet_triangle(5);
 	alph_pyramid(5);
 	reversed_alphas(5);
-	hollow_diamond(5);
+	hollow_diamond(4);
+	hourglass(5);
 	return 0;
 }
