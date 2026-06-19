@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unistd.h>
 using namespace std;
 
 void rectangle_filled(char c, int rows, int cols){
@@ -251,6 +252,27 @@ void hourglass(int n){
 		cout<<endl;
 	}
 }
+
+void square(int n){
+	for(int row=0;row<n;row++){
+		if(row==0 || row==n-1){
+		for(int col=0;col<n;col++){
+			cout<<"*";
+		}
+		cout<<endl;}
+		else{
+		    for(int col=0;col<n;col++){
+			if(col==0 || col ==n-1){
+				cout<<"*";
+			}
+			else{
+				cout<<" ";
+			}
+		    }
+		    cout<<endl;
+		}
+	}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -272,5 +294,6 @@ int main(){
 	reversed_alphas(5);
 	hollow_diamond(4);
 	hourglass(5);
+	square(5);
 	return 0;
 }
