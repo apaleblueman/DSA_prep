@@ -1,5 +1,5 @@
 #include <iostream>
-#include <unistd.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 void rectangle_filled(char c, int rows, int cols){
@@ -273,6 +273,24 @@ void square(int n){
 		}
 	}
 }
+
+void square_of_nums(int n){
+	int N = (n*2)-1;
+	int top,left,right,bottom;
+	int minDist;
+	for(int row=0;row<N;row++){
+		for(int col=0;col<N;col++){
+			top = row;
+			left = col;
+			right = N - 1 -col;
+			bottom = N - 1 -row;
+			minDist = min(min(top, bottom), min(left, right));
+			cout<<n - minDist;
+			
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	rectangle_filled('*',5,7);
 	right_triangle('*', 7);
@@ -295,5 +313,6 @@ int main(){
 	hollow_diamond(4);
 	hourglass(5);
 	square(5);
+	square_of_nums(4);
 	return 0;
 }
