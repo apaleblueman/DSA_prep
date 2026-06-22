@@ -15,10 +15,19 @@ int check_GCD(int num1, int num2){
 	}
 	return num1+num2;
 }
+int gcd(int a, int b) {
+    while(b != 0) {
+        int remainder = a % b;  // Calculate remainder
+        a = b;                   // Move b to a
+        b = remainder;           // Move remainder to b
+    }
+    return a;                    // When b becomes 0, a is the GCD
+}
 int main(){
 	int a,b;
 	cout<<"enter two numbers to check their GCD separated by spaces:";
 	cin>>a>>b;
-	cout<<"GCD of "<<a<<","<<b<<":"<<check_GCD(a,b);
+	cout<<"GCD of "<<a<<","<<b<<":"<<check_GCD(a,b)<<endl;
+	cout<<"GCD of "<<a<<","<<b<<":"<<gcd(a,b);
 
 }
