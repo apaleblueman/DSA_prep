@@ -15,19 +15,14 @@ void all_divisors(int num){
 }
 */
 //optimal method
-
 void all_divisors(int num){
 	int N = sqrt(num);
 	for(int i=1;i<=N;i++){
-		if(num%i==0){
-			cout<<i<<" ";
-			if((num/i)!=i){
-				cout<<(num/i)<<" ";
-			}else{return;}
+		if(num % i ==0){
+			cout<<i<<" X "<<num/i<<" = "<<num<<endl;
 		}
 	}
 }
-
 int main(){
 	int num;
 	cout<<"enter a num:";
