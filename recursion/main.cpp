@@ -33,18 +33,13 @@ void reverseArray(vector<int>& arr){
 		start++;end--;
 	}
 }
-bool checkPalindrome(string& str){
-	int start=0, end=str.size()-1;
-	while(start<end){
-		if(str[start]==str[end]){
-			start++;end--;
-		}
-		else{
-			return false;
-		}
-	}
-	return true;
+
+bool checkPalindrome(string& str,int start, int end){
+	if(start>=end){return true;}
+	if(str[start]!=str[end]){return false;}
+	return checkPalindrome(str,start+1,end-1);
 }
+
 int main(){
 	Name("chico",10);
 	nums(10);
@@ -56,13 +51,12 @@ int main(){
 		cout<<i<<",";
 	}
 	cout<<endl;
-	string str = "abba a  abba";
-	if(checkPalindrome(str)){
+	string str = "racecar";
+	if(checkPalindrome(str,0,str.size()-1)){
 		cout<<"yes, palindrome";
 	}
 	else{
 		cout<<"not palindrome";
 	}
-	
   	return 0;
 }
