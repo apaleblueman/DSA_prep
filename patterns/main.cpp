@@ -285,7 +285,7 @@ void square_of_nums(int n){
 			right = N - 1 -col;
 			bottom = N - 1 -row;
 			minDist = min(min(top, bottom), min(left, right));
-			cout<<n - minDist;
+			cout<<n-minDist;
 			
 		}
 		cout<<endl;

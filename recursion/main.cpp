@@ -16,12 +16,10 @@ void nums(int N){
 	nums(N-1);
 	cout<<N<<endl;
 }
-
 int sum(int N){
 	if(N<=0){return 0;}
 	return N + sum(N-1);
 }
-
 int facto(int N){
 	if(N<=1){return 1;}
 	return N * facto(N-1);
@@ -40,6 +38,10 @@ bool checkPalindrome(string& str,int start, int end){
 	return checkPalindrome(str,start+1,end-1);
 }
 
+int fibo(int n){
+	if(n<=1){return n;}
+	return	fibo(n-1)+fibo(n-2);
+}
 int main(){
 	Name("chico",10);
 	nums(10);
@@ -58,5 +60,7 @@ int main(){
 	else{
 		cout<<"not palindrome";
 	}
+	cout<<endl;
+	cout<<fibo(4);
   	return 0;
 }

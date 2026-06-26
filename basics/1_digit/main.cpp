@@ -1,26 +1,27 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <cmath>
 using namespace std;
 
 
 //bruteforce approach
-int count_digits(int num){
-	int count=0;
-	while(num>0){
-		num = num /10;
-		count++;
+int count_digits(int n){
+	int N = 0;
+	while(n>0){
+		n = n/10;
+		N++;
 	}
-	return count++;
+	return N;
+	
 }
 //optimal approach
 int count_digits_optimally(int num){
-	int count = log10(num)+1;
-	return count;
+	int N = log10(num) + 1;
+	return N;
 }
 int main(){
-	int num = 1000;
+	int num = 44040;
 	cout<<count_digits(num)<<"count using bruteforce"<<endl;
-	num = 2113;
+	num = 21130;
 	cout<<count_digits_optimally(num)<<"count using optimal approach"<<endl;
 
 
