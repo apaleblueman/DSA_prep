@@ -2,17 +2,22 @@
 #include<vector>
 using namespace std;
 
-int main(){
-	vector<int> arr = {10,2,3,5,7,1,0};
+void insertionSort(vector<int> &arr){
 	for(int i=1;i<arr.size();i++){
-		int key = arr[i];
-		int j=i;
-		while(j>0 && key<arr[j-1]){
-			arr[j] = arr[j-1];
+ 		int temp = arr[i];
+		int j=i-1;
+		while(j>=0 && arr[j]>temp){
+			cout<<j<<" ";
+			arr[j+1] = arr[j];
 			j--;
-		}	
-		arr[j]=key;
+		}
+		arr[j+1] = temp;
+		cout<<endl<<"endj:"<<j<<endl;
 	}
+}
+int main(){
+	vector<int> arr = {5,4,3,2,1};
+	insertionSort(arr);
 	for(auto i: arr){cout<<i<<",";}
 }
 
